@@ -38,11 +38,12 @@ function createEmojisStack() {
   const startingY = 50;
   const columns = 15;
   const rows = 5;
-  const columnGap = 40;
+  const columnGap = 80;
   const rowGap = 40;
-  return Composites.stack(startingX, startingY, columns, rows, columnGap, rowGap, function (x, y) {
+  const stack = Composites.stack(startingX, startingY, columns, rows, columnGap, rowGap, function (x, y) {
     return createShape(x, y)
   })
+  return Composites.chain(stack, 0.5, 1, 1, 0.5)
 }
 
 const runRice = () => {
