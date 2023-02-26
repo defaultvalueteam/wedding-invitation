@@ -1,57 +1,56 @@
-const button = document.querySelector('button')
-const width = window.innerWidth
-const height = window.innerHeight
+const {
+  Engine,
+  Render,
+  Bodies,
+  World,
+  MouseConstraint,
+  Composites,
+  Query,
+} = Matter
 
-const runRice = () => {
+const removeintro= () => {
+  const button = document.querySelector('button')
+  const text = document.querySelector('.dynamic__text__wrapper')
   button.style.display = 'none'
+  text.style.display = 'none'
+}
 
-  // module aliases
-  const {
-    Engine,
-    Render,
-    Bodies,
-    World,
-    MouseConstraint,
-    Composites,
-    Query,
-  } = Matter
-
-  // what is the width and height of the page
-  const w = window.innerWidth
-  const h = window.innerHeight
-
-  const emoj = ['😆', '😍', '🤩']
-  // create an engine
-  const engine = Engine.create()
-
-  // create a renderer
-  const renderer = Render.create({
-    element: document.getElementById('rice'),
-    engine: engine,
-    options: {
-      height: h,
-      width: w,
-      background: '#000000',
-      wireframes: false,
-      pixelRatio: window.devicePixelRatio,
+const createShape = (x, y) => {
+  console.log(x, y)
+  return Bodies.rectangle(x, y, 20, 20, {
+    density: 0.0005,
+    frictionAir: 0.05,
+    restitution: 0.3,
+    friction: 0.01,
+    render: {
+      sprite: {
+        texture: 'https://i.ibb.co/X4tm54x/smiley.png',
+        xScale: 0.5,
+        yScale: 0.5,
+        rotationAngle: Math.random(),
+      },
     },
   })
+}
 
-  const createShape = (x, y) => {
-    return Bodies.rectangle(x, y, 20, 20, {
-      render: {
-        sprite: {
-          texture: 'https://i.ibb.co/X4tm54x/smiley.png',
-          xScale: 0.5,
-          yScale: 0.5,
-        },
-      },
-    })
-  }
-
-  const emojis = Composites.stack(50, 50, 15, 5, 40, 40, function (x, y) {
+function createEmojisStack() {
+  const startingX = 50;
+  const startingY = 50;
+  const columns = 15;
+  const rows = 5;
+  const columnGap = 40;
+  const rowGap = 40;
+  return Composites.stack(startingX, startingY, columns, rows, columnGap, rowGap, function (x, y) {
     return createShape(x, y)
   })
+}
+
+const runRice = () => {
+  removeintro();
+  // module aliases
+
+  // const emoj = ['😆', '😍', '🤩']
+
 
   const wallOptions = {
     isStatic: true,
@@ -60,14 +59,51 @@ const runRice = () => {
     },
   }
 
-  const ground = Bodies.rectangle(w / 2, h + 50, w + 100, 100, wallOptions)
-  const ceiling = Bodies.rectangle(w / 2, -50, w + 100, 100, wallOptions)
-  const leftWall = Bodies.rectangle(-50, h / 2, 100, h + 100, wallOptions)
-  const rightWall = Bodies.rectangle(w + 50, h / 2, 100, h + 100, wallOptions)
+  // what is the width and height of the page
+  const canvasWidth = window.innerWidth
+  const canvasHeight = window.innerHeight
+  console.log(canvasWidth, canvasHeight)
 
-  World.add(engine.world, [emojis, ground, ceiling, leftWall, rightWall])
+  const ground = Bodies.rectangle(canvasWidth / 2, canvasHeight + 50, canvasWidth + 100, 100, wallOptions)
+  const ceiling = Bodies.rectangle(canvasWidth / 2, -50, canvasWidth + 100, 100, wallOptions)
+  const leftWall = Bodies.rectangle(-50, canvasHeight / 2, 100, canvasHeight + 100, wallOptions)
+  const rightWall = Bodies.rectangle(canvasWidth + 50, canvasHeight / 2, 100, canvasHeight + 100, wallOptions)
 
+
+  // create an engine
+  const engine = Engine.create()
+
+  let time = 0;
+  const changeGravity = () => {
+    time = time + 0.01;
+    engine.world.gravity.x = Math.sin(time)
+    engine.world.gravity.y = Math.cos(time)
+
+    requestAnimationFrame(changeGravity)
+  }
+
+  World.add(engine.world, [createEmojisStack(), ground, ceiling, leftWall, rightWall])
+
+  // create a renderer
+  const renderer = Render.create({
+    element: document.querySelector('.content__wrapper'),
+    engine: engine,
+    options: {
+      height: canvasHeight,
+      width: canvasWidth,
+      background: '#000000',
+      wireframes: false,
+      pixelRatio: window.devicePixelRatio,
+    },
+  })
   // run both the engine, and the renderer
+  // engine.gravity = {
+  //   x: 0,
+  //   y: 100000,
+  //   scale: 0.001
+  // }
+
   Engine.run(engine)
   Render.run(renderer)
+  changeGravity()
 }
