@@ -68,7 +68,7 @@ h1 {
 
 .hero__content--text {
   width: 316px;
-  height: 175px;
+  height: 246px;
 }
 
 .button__wrapper {
@@ -133,21 +133,19 @@ h1 {
 .two_gifs--container {
   display: flex;
   flex-direction: column;
-  grid-gap: 46px;
 }
 
 .emoji__laugh.cat {
   height: 136px;
   display: flex;
   flex: 2;
-  margin-left: 79px;
 }
 
 .emoji__laugh.bird {
   display: flex;
   flex: 1;
   margin-right: 46px;
-  width: 175px;
+  width: 95px;
 }
 
 @media (min-width: 768px) {
