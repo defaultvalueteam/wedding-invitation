@@ -68,7 +68,7 @@ h1 {
 
 .hero__content--text {
   width: 316px;
-  height: 246px;
+  height: 293px;
 }
 
 .button__wrapper {
@@ -121,13 +121,13 @@ h1 {
 }
 
 .emoji__laugh {
-  width: 200px;
+  width: 146px;
   background-color: var(--color-bg);
 }
 
 .hero__content--gifs {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .two_gifs--container {
@@ -144,7 +144,6 @@ h1 {
 .emoji__laugh.bird {
   display: flex;
   flex: 1;
-  margin-right: 46px;
   width: 95px;
 }
 
