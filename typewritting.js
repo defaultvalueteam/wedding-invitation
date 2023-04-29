@@ -1,11 +1,5 @@
 const textDisplay = document.getElementById('text')
-const phrases = [
-  'Esto es una invitación interactiva para...',
-  'la boda de Sergio y Mercedes...',
-  '¿Te apuntas?',
-]
-
-// const phrases = ['Esto es ...', 'la boda...', '¿Te apuntas?']
+const phrases = ['Ya somos maridas.', 'Ahora toca la party, vente!']
 
 let sentence = 0
 let character = 0
