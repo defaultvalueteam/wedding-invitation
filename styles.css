@@ -46,17 +46,19 @@ h1 {
 }
 
 /* -------------- LAYOUT -------------- */
-.content__wrapper {
-  opacity: 0.8;
-  width: 1440px;
-  max-width: 100%;
+
+.info__content,
+.hero__wrapper {
+  padding: 56px 30px;
   overflow: hidden;
   box-sizing: border-box;
   margin: 0 auto;
 }
 
-.hero__wrapper {
-  padding: 56px 30px;
+.hero__wrapper,
+.pigeon__wrapper {
+  width: 1440px;
+  max-width: 100%;
 }
 
 .hero__content {
@@ -129,7 +131,7 @@ h1 {
 }
 
 @media (min-width: 768px) {
-  .content__wrapper {
+  .hero__wrapper {
     padding: 87px 52px;
   }
 
@@ -171,8 +173,8 @@ h1 {
   .button__wrapper {
     justify-content: flex-start;
     position: absolute;
-    top: 409px;
-    left: 51px;
+    top: 468px;
+    left: 97px;
   }
 }
 
@@ -182,6 +184,8 @@ h1 {
 
 .pigeon__wrapper {
   padding: 120px 30px;
+  width: 1440px;
+  max-width: 100%;
 }
 
 .pigeon__wrapper img {
