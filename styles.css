@@ -64,11 +64,14 @@ h1 {
 .hero__content {
   display: flex;
   flex-direction: column;
+  gap: 78px;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero__content--text {
   width: 316px;
-  height: 293px;
+  height: 204px;
 }
 
 .button__wrapper {
@@ -79,7 +82,7 @@ h1 {
 .hero__button {
   border: 2px solid #000000;
   border-radius: 80px;
-  width: 271px;
+  width: 216px;
   height: 63.22px;
   background-color: var(--color-white);
   display: flex;
@@ -87,6 +90,8 @@ h1 {
   justify-content: center;
   gap: 24px;
   align-items: center;
+  /* position: absolute;
+  top: 404px; */
 }
 
 .hero__button:hover > .heart,
@@ -111,7 +116,7 @@ h1 {
 .hero__button p {
   font-family: 'Syne', sans-serif;
   font-weight: 500;
-  font-size: 36px;
+  font-size: 26px;
   line-height: 43px;
   color: var(--color-black);
 }
@@ -121,24 +126,36 @@ h1 {
 }
 
 .emoji__laugh {
-  width: 146px;
+  width: 300px;
   background-color: var(--color-bg);
 }
 
 .hero__content--gifs {
   display: flex;
   justify-content: flex-start;
+  position: relative;
 }
 
 .two_gifs--container {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .emoji__laugh.cat {
-  height: 136px;
+  position: absolute;
+  height: 426px;
+  left: -87px;
+  top: -126px;
+  z-index: -1;
   display: flex;
   flex: 2;
+}
+
+.emoji__laugh.lisa {
+  position: absolute;
+  top: -241px;
+  left: 205px;
 }
 
 .emoji__laugh.bird {
@@ -176,6 +193,7 @@ h1 {
 
   .hero__content {
     flex-direction: row;
+    height: 586px;
   }
 
   .hero__content--text {

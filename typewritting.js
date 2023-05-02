@@ -1,5 +1,9 @@
 const textDisplay = document.getElementById('text')
-const phrases = ['Ya somos maridas.', 'Ahora toca la party, vente!']
+const phrases = [
+  'Ya somos maridas...',
+  'Ahora toca la party...',
+  'Ponte ready, ¡vente!',
+]
 
 let sentence = 0
 let character = 0
