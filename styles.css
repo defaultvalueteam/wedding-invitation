@@ -168,12 +168,6 @@ h1 {
   flex: 2;
 }
 
-/* .emoji__laugh.lisa {
-  position: absolute;
-  top: -241px;
-  left: 205px;
-} */
-
 .emoji__laugh.bird {
   display: flex;
   flex: 1;
@@ -283,7 +277,7 @@ h1 {
 }
 
 .where__text > p:last-of-type {
-  font-size: 56px;
+  font-size: 52px;
 }
 
 .where__text .cascade span {
@@ -300,9 +294,14 @@ h1 {
   font-size: 56px;
 }
 
+.where__text .cascade .calandria a {
+  color: var(--color-bg);
+  text-decoration: none;
+}
+
 .where__text .border {
   border: 2px solid var(--color-black);
-  padding: 0 16px;
+  padding: 0 0px 0px 26px;
   border-radius: 40px;
   width: 58%;
   padding-right: 26px;
