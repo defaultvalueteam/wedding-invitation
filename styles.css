@@ -64,7 +64,7 @@ h1 {
 }
 
 .info__content {
-  padding: 116px 56px 30px 30px;
+  padding: 116px 30px 30px 30px;
 }
 
 .hero__wrapper {
@@ -96,7 +96,7 @@ h1 {
 }
 
 .hero__button {
-  border: 2px solid #000000;
+  border: 2px solid var(--color-black);
   border-radius: 80px;
   width: 216px;
   height: 63.22px;
@@ -235,10 +235,20 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+}
+
+.baloon {
+  display: none;
+  position: absolute;
+  top: -5px;
+  height: 165px;
+  z-index: 4;
+  left: 43px;
 }
 
 .pigeon__wrapper {
-  padding: 40px 30px;
+  padding: 48px 30px;
   width: 1440px;
   max-width: 100%;
 }
@@ -247,6 +257,7 @@ h1 {
   width: 236px;
 }
 
+.where__text .cascade,
 .where__text {
   display: inline-flex;
   flex-wrap: nowrap;
@@ -254,38 +265,53 @@ h1 {
   gap: 12px;
 }
 
-.where__text p {
+.where__text .cascade,
+.where__text .border > span,
+.where__text > p {
   margin: 0;
   padding: 0;
   font-family: 'Roslindale Variable';
   font-weight: 400;
-  font-size: 46px;
-  line-height: 70px;
-  color: var(--color-red);
+  color: var(--color-white);
   text-shadow: 0px -1px 4px var(--color-bg);
 }
 
-.where__text p:first-of-type {
+.where__text .border > span,
+.where__text > p:first-of-type {
   font-size: 64px;
-  line-height: 72px;
+  line-height: 70px;
 }
 
-.where__text p .time {
-  font-size: 46px;
+.where__text > p:last-of-type {
+  font-size: 56px;
+}
+
+.where__text .cascade span {
+  font-size: 40px;
+  padding-right: 4px;
+}
+
+.where__text .cascade .time {
+  font-size: 38px;
   text-decoration: underline;
+}
+
+.where__text .cascade .palma {
+  font-size: 56px;
 }
 
 .where__text .border {
   border: 2px solid var(--color-black);
   padding: 0 16px;
   border-radius: 40px;
-  width: 55%;
+  width: 58%;
   padding-right: 26px;
   display: inline-flex;
   flex-wrap: nowrap;
   gap: 9px;
 }
 
+.where__text .border span,
 .where__text .border p {
   font-size: 41px;
   line-height: 56px;
@@ -294,8 +320,4 @@ h1 {
 .where .cascade {
   display: inline-flex;
   flex-wrap: wrap;
-}
-
-.where .cascade p:first-child {
-  font-size: 40px;
 }
