@@ -270,16 +270,16 @@ h1 {
 
 .where__text .border > span,
 .where__text > p:first-of-type {
-  font-size: 64px;
+  font-size: 58px;
   line-height: 70px;
 }
 
 .where__text > p:last-of-type {
-  font-size: 52px;
+  font-size: 46px;
 }
 
 .where__text .cascade span {
-  font-size: 40px;
+  font-size: 36px;
   padding-right: 4px;
 }
 
@@ -289,7 +289,7 @@ h1 {
 }
 
 .where__text .cascade .palma {
-  font-size: 56px;
+  font-size: 48px;
 }
 
 .where__text .cascade .calandria a {
