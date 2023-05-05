@@ -13,12 +13,14 @@ const randomSticker = [
   'https://media.tenor.com/-ZSr_aYh6FAAAAAi/la-lisa.gif',
 ]
 
-const randomStickerUrl = randomSticker.map((sticker) => sticker)
+const randomStickerUrl = randomSticker.map((sticker) => {
+  return sticker
+})
 
 window.onload = () => {
   document
     .getElementById('theSticker')
-    .setAttribute('src', randomStickerUrl[Math.round(Math.random() * 9)])
+    .setAttribute('src', randomStickerUrl[Math.round(Math.random() * 8)])
 }
 
 const goWithTheFlow = () => {
