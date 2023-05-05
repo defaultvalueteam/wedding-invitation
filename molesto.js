@@ -28,7 +28,7 @@ const goWithTheFlow = () => {
   }, '3000')
 
   where.scrollIntoView({
-    block: 'start',
+    block: 'end',
     behavior: 'smooth',
     inline: 'nearest',
   })

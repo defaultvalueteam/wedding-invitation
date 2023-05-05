@@ -64,7 +64,7 @@ h1 {
 }
 
 .info__content {
-  padding: 100px 30px 30px 30px;
+  padding: 140px 30px 30px 30px;
 }
 
 .hero__wrapper {
@@ -106,11 +106,9 @@ h1 {
   justify-content: center;
   gap: 10px;
   align-items: center;
-  /* position: absolute;
-  top: 404px; */
 }
 
-.hero__button:hover > .heart,
+/* .hero__button:hover > .heart,
 .hero__button:hover {
   background-color: var(--color-red);
 }
@@ -121,7 +119,7 @@ h1 {
 
 .hero__button:hover > p {
   color: var(--color-white);
-}
+} */
 
 .heart {
   background-color: var(--color-white);
@@ -266,7 +264,7 @@ h1 {
   padding: 0;
   font-family: 'Roslindale Variable';
   font-weight: 400;
-  color: var(--color-white);
+  color: var(--color-bg);
   text-shadow: 0px -1px 4px var(--color-bg);
 }
 
@@ -300,7 +298,7 @@ h1 {
 }
 
 .where__text .border {
-  border: 2px solid var(--color-black);
+  border: 2px solid var(--color-bg);
   padding: 0 0px 0px 26px;
   border-radius: 40px;
   width: 58%;
