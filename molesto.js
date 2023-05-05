@@ -27,7 +27,7 @@ const goWithTheFlow = () => {
   celebrate.style.display = 'block'
   setTimeout(() => {
     celebrate.style.display = 'none'
-  }, '3000')
+  }, '4000')
 
   where.scrollIntoView({
     block: 'end',
